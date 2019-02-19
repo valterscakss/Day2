@@ -1,0 +1,2 @@
+A = load 'data/NYSE_daily' using PigStorage('\t') as (stockexchaneg:chararray, open:float, close:float, high:float, low:float, id:chararray, avg:float);
+store processed into 'data/NYSE_daily';

@@ -1,0 +1,8 @@
+lines = load 'data/words.txt' as (line);
+words = FOREACH lines GENERATE FLATTEN(TOKENIZE(line)) as word;
+substr = FOREACH words GENERATE SUBSTRING(word, 0, 1) as letter;
+grouped = GROUP substr BY letter; 
+A = FOREACH grouped GENERATE group, COUNT(substr);
+dump A;
+
+

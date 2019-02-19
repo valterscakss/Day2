@@ -1,0 +1,2 @@
+A = load 'data/NYSE_daily' using PigStorage('\t');
+
